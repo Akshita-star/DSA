@@ -6,7 +6,7 @@ public class MaxOfThree {
         int b=scan.nextInt();
         int c=scan.nextInt();
         int max=a;
-        if(max<b){
+        if(max<b||max<c){
             if(b>c)max=b;
             else max=c;
         }
