@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Pattern4SpecialAlphabetRectangle {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+        char ch='A';
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                System.out.print(ch);
+
+            }
+            System.out.println();
+            ch++;
+        }
+        
+    }
+}
