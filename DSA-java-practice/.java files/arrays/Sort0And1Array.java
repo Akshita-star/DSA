@@ -6,49 +6,48 @@ public static void main(String[] args) {
     int[] arr=new int[n];
     for(i=0;i<n;i++){
         arr[i]=sc.nextInt();
+        if((arr[i]!=0)&&(arr[i]!=1)){
+             System.out.println("wrong array passed");
+                      return;
+
+        }
     }
 
-    //METHOD 1
+    //METHOD 1-->willl go for interview
 
 
-    // int countones=0,countzero=0;
+    // int countzero=0;
     // for(i=0;i<n;i++){
     //     if(arr[i]==0){
     //         countzero++;
     //     }
-    //     else if(arr[i]==1){
-    //         countones++;
-    //     }
-    //     else{
-    //         System.out.println("wrong array passed");
-    //         return;
-    //     }        
-    // }
-    // int z=0;
-    // for(i=0;i<countzero;i++){
-    //     arr[z++]=0;
-    // }
-    // for(i=0;i<countones;i++){
-    //     arr[z++]=1;
+    //  } 
+    //if we get number of zeroes then we know no of ones automaticaly
+    // for(i=0;i<n;i++){
+    // if(i<countzero){
+    //    arr[i]=0;
+    // }else{
+    //     arr[i]=1;
+    // }  
     // }
 
     //METHOD 2
 
-   int left = 0, right = n-1;
-        while(left < right){
-            if(arr[left] == 0){
-                left++;
+   int low = 0, high = n-1;
+        while(low < high){
+            if(arr[low] == 0){
+                low++;
             } 
-            else if(arr[right] == 1){
-                right--;
+            else if(arr[high] == 1){
+                high--;
             }
             else {
                 // swap 1 (left) with 0 (right)
-                int temp = arr[left];
-                arr[left] = arr[right];
-                arr[right] = temp;
-                left++;
-                right--;
+                int temp = arr[low];
+                arr[low] = arr[high];
+                arr[high] = temp;
+                low++;
+                high--;
             }
         }
     for(i=0;i<n;i++){
